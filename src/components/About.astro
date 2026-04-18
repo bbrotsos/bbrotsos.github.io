@@ -1,0 +1,41 @@
+---
+const { profile } = Astro.props;
+---
+
+<section
+  id="about"
+  class="mx-auto max-w-6xl scroll-mt-24 px-6 py-6 md:px-10 md:py-8"
+>
+  <div class="rounded-[2rem] border border-white/80 bg-white/72 p-7 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/55 md:p-8">
+    <div class="grid gap-8 md:grid-cols-[0.95fr_1.05fr]">
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400 dark:text-slate-500"
+        >
+          About
+        </p>
+        <h2
+          class="mt-3 text-3xl font-semibold tracking-[-0.035em] text-slate-950 md:text-4xl dark:text-white"
+        >
+          Data, AI, and public-sector transformation
+        </h2>
+      </div>
+
+      <div
+        class="space-y-6 text-base leading-8 text-slate-600 dark:text-slate-300"
+      >
+        {profile.summary.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        profile.focusAreas.map((area) => (
+          <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-4 text-sm font-medium text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-slate-800/80 dark:bg-slate-950/55 dark:text-slate-200">
+            {area}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

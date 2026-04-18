@@ -1,0 +1,136 @@
+---
+import me from "../../public/me.jpg";
+const { profile } = Astro.props;
+const stats = [
+  { value: "25+", label: "years building data programs" },
+  { value: "5", label: "federal departments served" },
+  { value: "AI", label: "strategy grounded in delivery" },
+];
+---
+
+<section id="top" class="relative overflow-hidden scroll-mt-24">
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.95),_transparent_32%),linear-gradient(180deg,_rgba(255,255,255,0.9)_0%,_rgba(241,245,249,0.65)_58%,_rgba(255,255,255,0)_100%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.12),_transparent_28%),linear-gradient(180deg,_rgba(2,6,23,0.85)_0%,_rgba(15,23,42,0.45)_60%,_rgba(2,6,23,0)_100%)]"
+  >
+  </div>
+
+  <div
+    class="absolute -top-24 right-[-10%] h-[420px] w-[420px] rounded-full bg-sky-100/60 blur-3xl dark:bg-sky-500/10"
+  >
+  </div>
+  <div
+    class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300/70 to-transparent dark:via-slate-700/80"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto max-w-6xl px-6 pb-8 pt-28 md:px-10 md:pb-12 md:pt-32"
+  >
+    <div class="grid items-center gap-12 md:grid-cols-[1.15fr_.85fr]">
+      <div>
+        <p
+          class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-4 py-1.5 text-sm font-medium text-slate-600 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/65 dark:text-slate-300"
+        >
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          {profile.location}
+        </p>
+
+        <h1
+          class="max-w-4xl text-5xl font-semibold tracking-[-0.045em] text-slate-950 md:text-7xl dark:text-white"
+        >
+          {profile.name}
+        </h1>
+
+        <p
+          class="mt-5 max-w-3xl text-2xl font-medium tracking-tight text-slate-700 md:text-3xl dark:text-slate-100"
+        >
+          {profile.title}
+        </p>
+
+        <p class="mt-2 text-base text-slate-500 md:text-lg dark:text-slate-400">
+          {profile.org}
+        </p>
+
+        <p
+          class="mt-8 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300"
+        >
+          {profile.tagline}
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#about"
+            class="rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white shadow-[0_14px_30px_rgba(15,23,42,0.18)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(15,23,42,0.22)] dark:bg-white dark:text-slate-950"
+          >
+            Explore Background
+          </a>
+
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-full border border-slate-200/80 bg-white/70 px-6 py-3 text-sm font-medium text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white dark:border-slate-700/80 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:bg-slate-900"
+          >
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          {
+            stats.map((stat) => (
+              <div class="rounded-2xl border border-white/80 bg-white/65 px-4 py-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/55">
+                <p class="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                  {stat.value}
+                </p>
+                <p class="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                  {stat.label}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="relative flex justify-center md:justify-end">
+        <div
+          class="absolute h-60 w-60 rounded-[2.5rem] bg-sky-200/70 blur-3xl dark:bg-sky-500/10"
+        >
+        </div>
+
+        <div
+          class="relative w-full max-w-[19.5rem] overflow-hidden rounded-[2rem] border border-white/70 bg-white/72 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.16)] backdrop-blur-2xl dark:border-white/10 dark:bg-slate-900/65"
+        >
+          <div
+            class="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/50 dark:ring-white/10"
+          >
+          </div>
+          <div
+            class="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent dark:via-slate-400/40"
+          >
+          </div>
+
+          <img
+            src={me.src}
+            alt={`${profile.name} profile photo`}
+            class="h-[18rem] w-full rounded-[1.5rem] object-cover object-top"
+          />
+
+          <div
+            class="mt-4 rounded-[1.5rem] border border-slate-200/80 bg-white/75 p-4 dark:border-slate-800/80 dark:bg-slate-950/70"
+          >
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 dark:text-slate-500"
+            >
+              Current Focus
+            </p>
+            <p
+              class="mt-2 text-base font-medium leading-7 text-slate-700 dark:text-slate-200"
+            >
+              {profile.intro}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

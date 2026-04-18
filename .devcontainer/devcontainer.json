@@ -1,0 +1,27 @@
+{
+  "name": "Astro Resume",
+  "dockerComposeFile": "compose.yaml",
+  "service": "astro",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "editor.formatOnSave": true,
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        }
+      }
+    }
+  },
+  "remoteUser": "node",
+  "containerUser": "node",
+  "updateRemoteUserUID": true
+}

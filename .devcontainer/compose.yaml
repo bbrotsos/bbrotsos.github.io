@@ -1,0 +1,14 @@
+services:
+  astro:
+    image: mcr.microsoft.com/devcontainers/javascript-node:22-bookworm
+    user: node
+    working_dir: /workspace
+    ports:
+      - "4321:4321"
+    volumes:
+      - ..:/workspace
+      - astro_node_modules:/workspace/node_modules
+    command: sleep infinity
+
+volumes:
+  astro_node_modules:
