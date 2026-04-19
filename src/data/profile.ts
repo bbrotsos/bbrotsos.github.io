@@ -5,6 +5,7 @@ export const profile = {
   location: "Washington, DC",
   email: "brian@brotsos.org",
   linkedin: "https://www.linkedin.com/in/brian-brotsos-9bb1a410",
+  resume: "/brian_brotsos_resume.pdf",
   website: "https://brotsos.com",
   image: "/preview.png",
   url: "https://brotsos.com",
@@ -33,7 +34,7 @@ export const profile = {
       location: "Washington, DC",
       bullets: [
         "Leads department-wide strategy for data, analytics, geospatial and artificial intelligence.",
-        "Drives the use of data and AI to advance safety, efficiency, and innovation across the Department.",
+        "Led enterprise AI transformation elivering AI policy, platforms, and technologies to 50,000+ users.",
         "Oversees management of data as a strategic business asset and maximizes value from enterprise initiatives."
       ]
     },
