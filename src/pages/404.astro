@@ -1,0 +1,152 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { profile } from "../data/profile";
+---
+
+<Layout
+  title={`404 | ${profile.name}`}
+  description="The page you’re looking for doesn’t exist. Return to the homepage."
+>
+  <main
+    class="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 sm:px-10"
+  >
+    <section class="grid w-full items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+        >
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-sky-500 dark:bg-cyan-400"
+          ></span>
+          Page not found
+        </div>
+
+        <h1
+          class="mt-6 text-6xl font-semibold tracking-tight text-slate-950 sm:text-7xl dark:text-white"
+        >
+          404
+        </h1>
+
+        <p
+          class="mt-6 max-w-2xl text-xl leading-8 text-slate-600 dark:text-slate-300 sm:text-2xl"
+        >
+          This page doesn’t exist, may have moved, or the link is outdated.
+        </p>
+
+        <p
+          class="mt-4 max-w-xl text-base leading-7 text-slate-500 dark:text-slate-400"
+        >
+          Let’s get you back to the main site.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
+          >
+            Return Home
+          </a>
+
+          <a
+            href="/#experience"
+            class="inline-flex items-center justify-center rounded-2xl border border-slate-300/70 bg-white/70 px-6 py-3 text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-white/20 dark:hover:bg-white/10"
+          >
+            View Experience
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <a
+            href="/#about"
+            class="rounded-2xl border border-slate-300/70 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
+          >
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">
+              About
+            </p>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Learn more about who I am.
+            </p>
+          </a>
+
+          <a
+            href="/#experience"
+            class="rounded-2xl border border-slate-300/70 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
+          >
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">
+              Experience
+            </p>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              See recent roles and impact.
+            </p>
+          </a>
+
+          <a
+            href="/#contact"
+            class="rounded-2xl border border-slate-300/70 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
+          >
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">
+              Contact
+            </p>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Reach out directly.
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div
+          class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-200/50 via-white/50 to-cyan-100/40 blur-2xl dark:from-sky-500/10 dark:via-white/5 dark:to-cyan-400/10"
+        >
+        </div>
+
+        <div
+          class="relative overflow-hidden rounded-[2rem] border border-slate-300/70 bg-white/70 p-4 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/20"
+        >
+          <div
+            class="rounded-[1.5rem] border border-slate-200/80 bg-white/80 p-6 dark:border-white/10 dark:bg-slate-900/60"
+          >
+            <div class="flex items-center gap-3">
+              <div class="h-3 w-3 rounded-full bg-rose-400/80"></div>
+              <div class="h-3 w-3 rounded-full bg-amber-400/80"></div>
+              <div class="h-3 w-3 rounded-full bg-emerald-400/80"></div>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div
+                class="overflow-hidden rounded-[1.25rem] border border-slate-200/80 bg-slate-100 dark:border-white/10 dark:bg-slate-950/70"
+              >
+                <img
+                  src="/me.jpg"
+                  alt={`${profile.name} profile photo`}
+                  class="h-[320px] w-full object-cover object-center"
+                />
+              </div>
+
+              <div
+                class="rounded-[1.25rem] border border-slate-200/80 bg-white/80 p-5 dark:border-white/10 dark:bg-white/5"
+              >
+                <p
+                  class="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400"
+                >
+                  {profile.name}
+                </p>
+                <h2
+                  class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white"
+                >
+                  {profile.role}
+                </h2>
+                <p
+                  class="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400"
+                >
+                  The page is missing, but the site is still here. Head back
+                  home and keep exploring.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
