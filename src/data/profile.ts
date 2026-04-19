@@ -6,6 +6,8 @@ export const profile = {
   email: "brian@brotsos.org",
   linkedin: "https://www.linkedin.com/in/brian-brotsos-9bb1a410",
   website: "https://brotsos.com",
+  image: "/preview.png",
+  url: "https://brotsos.com",
   intro:
     "Public sector data and AI leader with 25 years of experience designing, implementing, and scaling enterprise data, analytics, and emerging technology initiatives.",
   tagline:

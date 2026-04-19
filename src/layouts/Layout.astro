@@ -1,34 +1,24 @@
 ---
-const { title = "" } = Astro.props;
+import Head from "../components/Head.astro";
 import "../styles/global.css";
+
+import { profile } from "../data/profile";
 ---
 
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <script is:inline>
-      (() => {
-        const savedTheme = localStorage.getItem("theme");
-        const systemDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-
-        if (savedTheme === "dark" || (!savedTheme && systemDark)) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      })();
-    </script>
-  </head>
+  <Head profile={profile} />
   <body
     class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.22),_transparent_30%),linear-gradient(180deg,_#f8fafc_0%,_#f1f5f9_48%,_#ffffff_100%)] text-slate-900 antialiased transition-colors duration-300 dark:bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.16),_transparent_24%),linear-gradient(180deg,_#020617_0%,_#0f172a_52%,_#020617_100%)] dark:text-slate-100"
   >
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div class="absolute left-1/2 top-[-12rem] h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-sky-200/40 blur-3xl dark:bg-sky-500/10"></div>
-      <div class="absolute bottom-[-10rem] right-[-6rem] h-[20rem] w-[20rem] rounded-full bg-cyan-200/30 blur-3xl dark:bg-cyan-400/10"></div>
+      <div
+        class="absolute left-1/2 top-[-12rem] h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-sky-200/40 blur-3xl dark:bg-sky-500/10"
+      >
+      </div>
+      <div
+        class="absolute bottom-[-10rem] right-[-6rem] h-[20rem] w-[20rem] rounded-full bg-cyan-200/30 blur-3xl dark:bg-cyan-400/10"
+      >
+      </div>
     </div>
     <slot />
   </body>
