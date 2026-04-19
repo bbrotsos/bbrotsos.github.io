@@ -30,7 +30,7 @@ const { profile } = Astro.props;
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content={profile.url} />
-  <meta property="og:title" content={profile.title} />
+  <meta property="og:title" content={`${profile.name} | ${profile.title}`} />
   <meta property="og:description" content={profile.description} />
   <meta property="og:image" content={`${profile.url}/preview.png`} />
   <meta property="og:image:width" content="1200" />
@@ -41,29 +41,33 @@ const { profile } = Astro.props;
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preload" as="image" href="/me.jpg" />
 
-  <script type="application/ld+json">
-    {
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Brian Brotsos",
-      "url": "https://brotsos.com",
-      "image": "https://brotsos.com/me.jpg",
-      "jobTitle": "Chief Data and AI Officer (A)",
-      "sameAs": [
+      name: profile.name,
+      url: profile.url,
+      image: profile.url + "/me.jpg",
+      jobTitle: profile.title,
+      sameAs: [
         "https://github.com/bbrotsos",
-        "https://www.linkedin.com/in/brian-brotsos-9bb1a410"
-      ]
-    }
-  </script>
+        "https://www.linkedin.com/in/brian-brotsos-9bb1a410",
+      ],
+    })}
+  />
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CZQCR3TX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6CZQCR3TX"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-P6CZQCR3TX');
-</script>
+    gtag("config", "G-P6CZQCR3TX");
+  </script>
   <script is:inline>
     (() => {
       const savedTheme = localStorage.getItem("theme");
